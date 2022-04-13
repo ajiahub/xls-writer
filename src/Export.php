@@ -52,7 +52,8 @@ class Export extends ExportAbstract
      */
     public function download()
     {
-        $filePath = $this->output();
+        $xlsWriter = $this->output();
+        $filePath = $xlsWriter->excel;
         header("Content-Type: application/vnd.openxmlformats-officedocument.spreadsheetml.sheet");
         header('Content-Disposition: attachment;filename="' . $this->fileName . '"');
         header('Content-Length: ' . filesize($filePath));

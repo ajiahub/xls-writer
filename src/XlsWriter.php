@@ -30,8 +30,18 @@ class XlsWriter
     {
         if (method_exists($this->excel, $name)) {
             $this->excel = call_user_func_array([$this->excel, $name], $arguments);
+        }else{
+            throw new \Exception('Getting unknown method: ' . get_class($this) . '::' . $name);
         }
         return $this;
+    }
+
+    public function __get($name)
+    {
+        if(property_exists($this,$name)){
+            return $this->$name;
+        }
+        throw new \Exception('Getting unknown property: ' . get_class($this) . '::' . $name);
     }
 
     private function extendLoad(): bool
