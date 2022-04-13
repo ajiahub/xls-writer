@@ -9,6 +9,10 @@ Run the following command to install the latest applicable version of the packag
 composer require chinahub/xls-writer
 ```
 
+## Env Required
+- `xlswriter` extention
+- recommend `PHP` > 7.4
+
 ## Usage
 ```php
 use Chinahub\XlsWriter\Export;
