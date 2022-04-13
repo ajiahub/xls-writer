@@ -6,7 +6,7 @@ php xls library based on xlsWriter
 Run the following command to install the latest applicable version of the package:
 
 ```bash
-composer require propaganistas/laravel-phone
+composer require chinahub/xls-writer
 ```
 
 ## Usage
