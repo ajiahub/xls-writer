@@ -1,6 +1,6 @@
 {
     "name": "chinahub/xls-writer",
-    "description": "base xls-writer library",
+    "description": "php xls library based on xlsWriter",
     "type": "library",
     "license": "MIT",
     "autoload": {
