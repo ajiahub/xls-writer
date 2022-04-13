@@ -1,0 +1,23 @@
+{
+    "name": "chinahub/xls-writer",
+    "description": "base xls-writer library",
+    "type": "library",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Chinahub\\XlsWriter\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Chinahub\\XlsWriter\\Tests\\": "tests/"
+        }
+    },	
+    "minimum-stability": "dev",
+    "require": {
+        "php": ">=7.4"
+    },
+    "require-dev": {
+        "php": ">=7.4"
+    }
+}
