@@ -1,5 +1,5 @@
 # xls-writer
-php xls library based on xlsWriter
+php xls library based on xlsWriter, php-xlsWriter：https://github.com/viest/php-ext-xlswriter
 
 ## Installation
 
@@ -76,6 +76,3 @@ while (($row = $excel->getRow()) !== NULL) {
     var_dump($row);
 }
 ```
-
-
-PHP-XlsWriter：https://github.com/viest/php-ext-xlswriter
