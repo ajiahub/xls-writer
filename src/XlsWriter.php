@@ -9,7 +9,7 @@ class XlsWriter
 {
     private $excel;
 
-    private $config;
+    private array $config = [];
 
     public function __construct(array $config = [])
     {

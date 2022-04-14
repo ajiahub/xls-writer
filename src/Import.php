@@ -11,24 +11,23 @@ use Chinahub\XlsWriter\abstracts\ImportAbstract;
  */
 class Import extends ImportAbstract
 {
-    private $file;
+    private string $fileName;
+    private array $config;
 
     public function __construct($file)
     {
-        $this->file = $file;
-    }
-
-    private function openSheet(){
-        return (new XlsWriter())->instance()->openFile($this->file)->openSheet();
+        $this->fileName = basename($file);
+        $this->config = ['path'=>dirname($file)];
     }
 
     public function getSheet()
     {
-        return $this->openSheet()->getSheetData();
+        return (new XlsWriter($this->config))->instance()->openFile($this->fileName)->openSheet()->getSheetData();
     }
 
-    public function getRow()
+    public function instance()
     {
-        return $this->openSheet()->nextRow();
+        $xlsWriter = (new XlsWriter($this->config))->instance()->openFile($this->fileName)->openSheet();
+        return $xlsWriter->excel;
     }
 }

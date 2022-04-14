@@ -64,15 +64,16 @@ get all data from sheet
 ```php
 use Chinahub\XlsWriter\Import;
 
-$excel = new Import('user.xlsx');
+$excel = new Import('/www/user.xlsx');
 $excel->getSheet();
 ```
 get row from sheet
 ```php
 use Chinahub\XlsWriter\Import;
 
-$excel = new Import('user.xlsx');
-while (($row = $excel->getRow()) !== NULL) {
+$excel = new Import('/www/user.xlsx');
+$excel = $excel->instance();
+while (($row = $excel->nextRow()) !== NULL) {
     var_dump($row);
 }
 ```

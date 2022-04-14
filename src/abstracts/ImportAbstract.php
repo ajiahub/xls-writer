@@ -6,5 +6,5 @@ abstract class ImportAbstract
 {
     abstract public function getSheet();
 
-    abstract public function getRow();
+    abstract public function instance();
 }
