@@ -3,6 +3,7 @@
 namespace Chinahub\XlsWriter;
 
 use Cassandra\Exception\ConfigurationException;
+use Chinahub\XlsWriter\helpers\FileHelper;
 
 class XlsWriter
 {
@@ -12,12 +13,12 @@ class XlsWriter
 
     public function __construct(array $config = [])
     {
-        $this->config = array_merge(['path' => $this->getTmpDir()], $config);
+        $this->config = array_merge(['path' => FileHelper::getTmpDir()], $config);
     }
 
     public function instance()
     {
-        if (!$this->extendLoad()) {
+        if (!FileHelper::extendLoad()) {
             throw new ConfigurationException('xlsWriter extension required.');
         }
         if (!$this->excel instanceof \Vtiful\Kernel\Excel) {
@@ -42,19 +43,5 @@ class XlsWriter
             return $this->$name;
         }
         throw new \Exception('Getting unknown property: ' . get_class($this) . '::' . $name);
-    }
-
-    private function extendLoad(): bool
-    {
-        return extension_loaded('xlsWriter');
-    }
-
-    private function getTmpDir(): string
-    {
-        $tmp = ini_get('upload_tmp_dir');
-        if ($tmp !== false && file_exists($tmp)) {
-            return realpath($tmp);
-        }
-        return realpath(sys_get_temp_dir());
     }
 }
