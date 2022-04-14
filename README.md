@@ -67,7 +67,7 @@ get row from sheet
 use Chinahub\XlsWriter\Import;
 
 $excel = new Import('user.xlsx');
-while (($row = $excel->nextRow()) !== NULL) {
+while (($row = $excel->getRow()) !== NULL) {
     var_dump($row);
 }
 ```
