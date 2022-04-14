@@ -11,7 +11,12 @@ composer require chinahub/xls-writer
 
 ## Env Required
 - `xlswriter` extention
+```
+pecl install xlswriter
+# add extension = xlswriter.so to php.ini
+```
 - recommend `PHP` > 7.4
+
 
 ## Usage
 ### Export
@@ -71,3 +76,6 @@ while (($row = $excel->getRow()) !== NULL) {
     var_dump($row);
 }
 ```
+
+
+PHP-XlsWriter：https://github.com/viest/php-ext-xlswriter
